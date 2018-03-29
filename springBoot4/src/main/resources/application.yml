@@ -1,0 +1,21 @@
+#服务的端口和自定义上下文
+server:
+  context-path: /xpj
+  port: 9999
+  
+#配置自定义字符串
+template: Hello,%s
+
+#配置log4j
+logging:
+  level:
+#优先级从高到低分别是 ERROR、WARN、INFO、DEBUG 也是说大于等于的级别的日志才输出
+#Log levels severity mapping. Use 'root' for the root logger.
+    root: debug
+  pattern:
+#日志输出到控制台的格式    
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#    日志输出到文件中的格式
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+#定义日志的输出路径 这是用的是相对路径 当前目录是src/
+  file: ./log/2.info
